@@ -24,17 +24,18 @@ const Tweets = () => {
       </div>
       <ul className="tweets">
         {dummyTweets.map((tweet) => {
+          const { id, picture, username, createdAt, content } = tweet;
           return (
-            <li className="tweet" id={tweet.id} key={tweet.id}>
+            <li className="tweet" id={id} key={id}>
               <div className="tweet__profile">
-                <img src={tweet.picture} />
+                <img src={picture} />
               </div>
               <div className="tweet__content">
                 <div className="tweet__userInfo">
-                  <span className="tweet__username">{tweet.username}</span>
-                  <span className="tweet__createdAt">{tweet.createdAt}</span>
+                  <span className="tweet__username">{username}</span>
+                  <span className="tweet__createdAt">{createdAt}</span>
                 </div>
-                <div className="tweet__message">{tweet.content}</div>
+                <div className="tweet__message">{content}</div>
               </div>
             </li>
           );
